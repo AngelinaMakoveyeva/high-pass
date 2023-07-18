@@ -1,0 +1,255 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.page {
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.dis-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+.page--ios .dis-scroll {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  column-gap: var(--container-offset);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.tag {
+  padding: 8px 14px 6px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--light-color);
+  background-color: var(--color-bg);
+}
+
+.title {
+  margin: 0;
+  font-family: 'TTFirsNeue';
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--light-color);
+}
+
+.image {
+  display: block;
+}
+
+.btn {
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  border: 3px solid transparent;
+  color: var(--light-color);
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  outline: none;
+  cursor: pointer;
+
+  &.focus-visible {
+    border-color: var(--color-active);
+  }
+
+  &:hover:not(.focus-visible) {
+    background-color: var(--color-focus);
+    border-color: var(--color-focus);
+  }
+
+  &:active:not(.focus-visible) {
+    background-color: var(--color-active);
+    border-color: var(--color-active);
+  }
+}
+
+.input {
+  padding: 15px 23px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: var(--light-color);
+  outline: none;
+
+  &.focus-visible {
+    border-color: var(--color-orange);
+  }
+
+  &:hover:not(.focus-visible) {
+    color: var(--color-orange);
+
+    &::placeholder {
+      color: var(--color-orange);
+    }
+  }
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  font-family: 'TTFirsNeue';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--color-light-orange);
+  outline: none;
+
+  &__svg {
+    fill: var(--color-orange);
+  }
+}
+
+.form-label {
+  position: relative;
+
+  .just-validate-error-label {
+    position: absolute;
+    top: 4px;
+    left: 23px;
+    font-size: 9px;
+  }
+
+  .just-validate-error-field {
+    border-color: var(--color-error);
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+}
+
+@media (max-width: 960px) {
+  :root {
+    --container-offset: 27px;
+  }
+}
+
+@media (max-width: 530px) {
+  :root {
+    --container-offset: 21px;
+  }
+
+  .tag {
+    padding: 3px 7px;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 9px 20px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .input {
+    padding: 10px 22px;
+  }
+}

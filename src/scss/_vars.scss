@@ -1,0 +1,26 @@
+:root {
+  // base
+  --font-family: "Roboto", sans-serif;
+  --content-width: 1290px;
+  --container-offset: 30px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --offset: 30px;
+  // colors
+  --light-color: #fff;
+  --color-bg: #202020;
+  --color-orange: #FF6E30;
+  --color-grey: #CACACA;
+  --color-dark: #4A4A4A;
+  --color-dark-grey: #999;
+  --color-light-grey: #E9E9E9;
+  --color-4a: #4a4a4a;
+  --color-80: #808080;
+
+  --color-light-orange: #ff6e30;
+  --color-focus: #BC572B;
+  --color-active: #CE4307;
+  --color-descr: #FFD4C1;
+
+  --color-error: #FF3030;
+}
